@@ -8,10 +8,18 @@ const connect = function() {
     host: '50.64.116.162',
     port: 50541
   });
+  // print if connection was successful
+  conn.on('connect', () => {
+    console.log('Connected successfully!')
+  });
+  // sends name to server
+  conn.on('connect', () => {
+    conn.write("Name: P-T")
+  })
   // interpret incoming data as text
   conn.setEncoding('utf8');
   conn.on('data', (data) => {
-    console.log
+    console.log(data);
   }) 
 
   return conn;
