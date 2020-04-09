@@ -4,6 +4,8 @@
  */
 let connection;
 
+const constants = require('./constants');
+
 const handleUserInput = function(key) {
   if (key === '\u0003') {
     process.exit();
@@ -21,16 +23,16 @@ const handleUserInput = function(key) {
     connection.write('Move: right');
   }
   if (key === '1') {
-    connection.write('Say: Bzz... Test');
+    connection.write(`Say: ${constants.MSGONE}`);
   }
   if (key === '2') {
-    connection.write('Say: 1-2-3-GO!');
+    connection.write(`Say: ${constants.MSGTWO}`);
   }
   if (key === '3') {
-    connection.write('Say: Another one...');
+    connection.write(`Say: ${constants.MSGTHREE}`);
   }
   if (key === '4') {
-    connection.write('Say: bites the dust!');
+    connection.write(`Say: ${constants.MSGFOUR}`);
   }
 }
 const setupInput = function(conn) {
